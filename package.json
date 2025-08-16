@@ -1,6 +1,6 @@
 {
   "name": "auth-kit",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "CLI tool to integrate auth methods into your project",
   "main": "dist/index.js",
   "bin": {
