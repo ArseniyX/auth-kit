@@ -1,10 +1,19 @@
 {
   "name": "auth-kit",
   "version": "1.0.0",
-  "description": "Keep auth part of the app",
-  "main": "index.js",
+  "description": "CLI tool to integrate auth methods into your project",
+  "main": "dist/index.js",
+  "bin": {
+    "auth-kit": "./dist/index.js"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "dev": "ts-node src/index.ts",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build"
   },
   "repository": {
     "type": "git",
@@ -15,5 +24,20 @@
   "bugs": {
     "url": "https://github.com/ArseniyX/auth-kit/issues"
   },
-  "homepage": "https://github.com/ArseniyX/auth-kit#readme"
+  "homepage": "https://github.com/ArseniyX/auth-kit#readme",
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "@types/node": "^20.0.0",
+    "jest": "^29.5.0",
+    "ts-jest": "^29.1.0",
+    "ts-node": "^10.0.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "files": [
+    "dist/**/*",
+    "README.md"
+  ]
 }
